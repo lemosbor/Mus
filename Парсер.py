@@ -31,24 +31,22 @@ while конец==0: # цикл перебора страниц
 	if len(предбаза) < 14: # если записалось меньше 14 альбомов, то мы достигли конца и пора прекращать цикл
 		конец = 1
 # ПАРСИНГ ФОРУМА
-база = json.loads(open ('музыка.json', "r", encoding='utf-8').read())
-for i in база:
-	if "ссылка" not in i:
-		адрес = i['ф']
+база = json.loads(open ('музыка.json', "r", encoding='utf-8').read()) # открываем базу
+for i in база: # прогоняем по всем записям
+	if "ссылка" not in i: # если нет ссылки
+		адрес = i['ф'] # адрес — ссылка на форум
 		print(адрес)
-		номер = "p"+(адрес.split('p/')[1])
-		resp = req.get(адрес, proxies=proxies) # делаем запрос к сайту, используя прокси
+		номер = "p"+(адрес.split('p/')[1]) # номер сообщения на форуме (индекс «р» + часть адреса)
+		resp = req.get(адрес, proxies=proxies) # делаем запрос к адресу, используя прокси
 		resp.encoding = 'utf-8' #перекодируем результат запроса
 		суп = BeautifulSoup(resp.text,  'lxml') # формируем читаемый текст
-		сообщение = суп.find("div", id=номер)
-		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare')) #поиск ссылки
+		сообщение = суп.find("div", id=номер) # находим тело сообщения
+		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare')) # находим ссылку ДОБАВИТЬ поиск альтернативных систем закачивания
 		for txt in ссылка:
-			#print(" ".join(txt.split()))
-			i.update({'ссылка' : " ".join(txt.split())})
-		i.update({'жанр' : [] })
-		for жанр in суп.find_all("a", class_="ftag"): # поиск жанра
-		        #print(жанр.text)		    
-		    i["жанр"].append(жанр.text)
-		спасибо = суп.find("div", id=номер).find('p', class_='thanx') # поиск спасибо
-		i.update({'р' : (спасибо.findChildren()[2].text)})
+			i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
+		i.update({'жанр' : [] }) # записываем список жанров
+		for жанр in суп.find_all("a", class_="ftag"): # находим все жанры
+		    i["жанр"].append(жанр.text) # записываем все жанры в список жанров
+		спасибо = суп.find("div", id=номер).find('p', class_='thanx') # поиск количества сказавших спасибо ДОРАБОТАТЬ
+		i.update({'р' : (спасибо.findChildren()[2].text)}) #записываем количество сказавших спасибо
 		with open("музыка.json", "w", encoding='utf-8') as i: i.write(json.dumps(база, ensure_ascii = False)) # записываем базу
