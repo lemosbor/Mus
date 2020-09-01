@@ -2,6 +2,8 @@ from pydub import AudioSegment # подключаем библиотеку дл�
 from pydub.playback import play # подключаем библиотеку для воспроизведения mp3
 import json
 import os
+import glob
+from pathlib import Path
 #for root, dirs, files in os.walk("."):  
 for root, dirs, files in os.walk("."):  
     #for filename in files:
@@ -14,7 +16,7 @@ for n in альбомы:
   песни = []
   демо = ""
   демо = AudioSegment.from_mp3(n+песни[0])[:5000] #первые пять секунд от первой песни
-  for i in песни:
+  for i in Path('/путь альбома').glob('*.mp3'):
     песня = AudioSegment.from_mp3(n+"/"+i) # подгружаем mp3 файл
     обрезок = песня[30000:35000]
     демо = демо + обрезок
