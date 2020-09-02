@@ -1,26 +1,19 @@
 from pydub import AudioSegment # подключаем библиотеку для работы с mp3
 from pydub.playback import play # подключаем библиотеку для воспроизведения mp3
 import json
-import os
-import glob
-from pathlib import Path
-#for root, dirs, files in os.walk("."):  
-папки = []
-for root, dirs, files in os.walk("."):  
-	папки = папки + dirs
+import os # библиотека для работы с файловой системой
+import glob # библиотека для работы с расширениями файлов
+from pathlib import Path # библиотека для работы с папками
 
-#for root, dirs in os.walk("."):
-#  альбомы = root
-print(папки)
-for i in папки:
-	демо = 0
-	for n in Path(i).glob('*.mp3'):
-		песня = AudioSegment.from_mp3(n) # подгружаем mp3 файл
-		#обрезок = 0
-		обрезок = песня[63000:70000].fade_in(1000).fade_out(500) + песня[95000:101000].fade_in(500).fade_out(1500)
-		#обрезок=обрезок.append(песня[63000:70000] , crossfade=1500)
-		#обрезок=обрезок.append(песня[95000:101000] , crossfade=1500)
-		демо = демо + обрезок
-    	# демо = демо.append(обрезок, crossfade=1500) # с плавным переходом
-  		#демо = демо.fade_in(2000).fade_out(3000) # плавное начало и конец
-	демо.export(i+"демо.mp3", format="mp3", tags={'artist': i})
+папки = [] # создаём массив директорий с музыкой
+for root, dirs, files in os.walk("."): #прогоняем названия директорий в текущей директории
+	# ОПРЕДЕЛЕНИЕ вложенных директорий
+	папки = папки + dirs #наполняем массив директорий
+print("Директорий с музыкой:",len(папки))
+for i in папки: # в каждой из директорий
+	демо = 0 #создаём демо-трек
+	for n in Path(i).glob('*.mp3'): # в каждом файле с расширением mp3 рассматриваемой директории
+		песня = AudioSegment.from_mp3(n) # подгружаем файл
+		обрезок = песня[63000:70000].fade_in(1000).fade_out(500) + песня[95000:102000].fade_in(500).fade_out(1500) # создаем обрезок песни с 1:03—1:10 и 1:35—1:42 с затуханием
+		демо = демо + обрезок # формируем демо-трек
+	демо.export(i+".mp3", format="mp3", tags={'artist': i}) # записываем демо-трек
