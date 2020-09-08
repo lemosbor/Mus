@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # импорт класса BeautifulSoup из модуля bs4
 import requests as req
 import json
 import re
@@ -12,23 +12,22 @@ while конец==0: # цикл перебора страниц
 	if итерация ==1: адрес ="https://funkysouls.org/music/index.html" # для первой страницы		
 	else: адрес =("https://funkysouls.org/music/page/"+str(итерация)+".html") # для последующих		
 	база = json.loads(open ('музыка.json', "r", encoding='utf-8').read()) # открываем базу
-	альбомы = [i['а'] for i in база] # задаем перечень существующих записей (альбомов)
+	альбомы = [i['а'] for i in база] # создаем перечень существующих записей (альбомов)
 	предбаза = [] # создаем пустую предбазу
-	про="95.174.67.50"
-	кси="18080"
-#	proxies = { 'http': "http://83.97.23.90:18080", 'https': "http://176.56.107.238:52184"}
-	proxies = { 'http': "http://"+про+":"+кси, 'https': "http://"+про+":"+кси} # задаем прокси (для заблокированных сайтов) https://free-proxy-list.net/
-	resp = req.get(адрес, proxies=proxies) # делаем запрос к сайту, используя прокси
-	resp.encoding = 'utf-8' #перекодируем результат запроса
-	суп = BeautifulSoup(resp.text,  'lxml') # формируем читаемый текст
-	массив = суп.find_all("h2") # формируем массив по тегу
-	альбом = [м.text for м in массив if м.text is not None] # формируем список названия
-	массивссылок = суп.find_all("p", class_="download_box") 
-	ссылки = [м.a['href'] for м in массивссылок if м.a['href'] is not None]
+	про="95.174.67.50" # IP прокси https://free-proxy-list.net/
+	кси="18080" # порт прокси
+	прокси = { 'http': "http://"+про+":"+кси, 'https': "http://"+про+":"+кси} # задаем прокси (для заблокированных сайтов)
+	запрос = req.get(адрес, proxies=прокси) # делаем запрос к сайту, используя прокси
+	запрос.encoding = 'utf-8' #перекодируем результат запроса
+	суп = BeautifulSoup(запрос.text,  'lxml') # создание объекта BeautifulSoup (суп) и передача его конструктору. Вторая опция уточняет объект парсинга.
+	массив = суп.find_all("h2") # из супа формируем массив по тегу h2
+	альбом = [м.text for м in массив if м.text is not None] # формируем список названий (text) из массива
+	массивссылок = суп.find_all("p", class_="download_box") # из супа формируем массив ссылок по тегу р с классом download_box
+	ссылки = [м.a['href'] for м in массивссылок if м.a['href'] is not None] # формируем список ссылок (элемент href) из массива ссылок
 	for i, n in zip(альбом, ссылки): # объединение списков по ключам
-		предбаза.append({'а' : i, 'ф' : n})
-	предбаза = [i for i in предбаза if not (i["а"] in альбомы)] #удаляем из предбазы существующие записи
-	база = база + предбаза # добавляем записи в предбазу
+		предбаза.append({'а' : i, 'ф' : n}) # добавляем в подбазу название альбома (а) и ссылку на форум (ф)
+	предбаза = [i for i in предбаза if not (i["а"] in альбомы)] #удаляем из предбазы существующие альбомы (из перечня альбомы)
+	база = база + предбаза # добавляем записи в базу
 	with open("музыка.json", "w", encoding='utf-8') as i: i.write(json.dumps(база, ensure_ascii = False)) # записываем базу
 	print("Добавленно альбомов:", len(предбаза))
 	итерация +=1
@@ -40,19 +39,19 @@ for i in база: # прогоняем по всем записям
 		адрес = i['ф'] # адрес — ссылка на форум
 		print(адрес) 
 		номер = "p"+(адрес.split('p/')[1]) # номер сообщения на форуме (индекс «р» + часть адреса)
-		resp = req.get(адрес, proxies=proxies) # делаем запрос к адресу, используя прокси
-		resp.encoding = 'utf-8' #перекодируем результат запроса
-		суп = BeautifulSoup(resp.text,  'lxml') # формируем читаемый текст
-		сообщение = суп.find("div", id=номер) # находим тело сообщения
-		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare')) # находим ссылку ДОБАВИТЬ поиск альтернативных систем закачивания
+		запрос = req.get(адрес, proxies=прокси) # делаем запрос к адресу, используя прокси
+		запрос.encoding = 'utf-8' #перекодируем результат запроса
+		суп = BeautifulSoup(запрос.text,  'lxml') # создание объекта BeautifulSoup (суп) и передача его конструктору
+		сообщение = суп.find("div", id=номер) # находим код с тегом div и id номера сообщения
+		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare')) # находим ссылку
 		for txt in ссылка:
 			i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
 		if not "ссылка" in i:
-			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('zippyshare')) # находим ссылку ДОБАВИТЬ поиск альтернативных систем закачивания
+			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('zippyshare')) # находим ссылку
 			for txt in ссылка:
 				i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
 		if not "ссылка" in i:
-			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('cloud.mail')) # находим ссылку ДОБАВИТЬ поиск альтернативных систем закачивания
+			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('cloud.mail')) # находим ссылку
 			for txt in ссылка:
 				i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
 		i.update({'жанр' : [] }) # записываем список жанров
