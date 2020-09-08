@@ -48,13 +48,9 @@ for i in база: # прогоняем по всем записям
 		for txt in ссылка:
 			i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
 		if not "ссылка" in i: # если ссылка не нашлась, то находим по-другому
-			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('zippyshare')) # находим ссылку
+			ссылка = суп.find_all(string=re.compile(['zippyshare', 'cloud.mail']), recursive=True) # находим ссылку во всём супе в обратном порядке #'https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html'
 			for txt in ссылка:
-				i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
-		if not "ссылка" in i:
-			ссылка = суп.find('div', class_='inner').find_all(string=re.compile('cloud.mail')) # находим ссылку
-			for txt in ссылка:
-				i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
+				i.update({'ссылка' : " ".join(txt.split("//")[-1])}) # записываем ссылку
 		i.update({'жанр' : [] }) # записываем список жанров
 		for жанр in суп.find_all("a", class_="ftag"): # находим все жанры
 		    i["жанр"].append(жанр.text) # записываем все жанры в список жанров
