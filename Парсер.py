@@ -44,13 +44,13 @@ for i in база: # прогоняем по всем записям
 		суп = BeautifulSoup(запрос.text,  'lxml') # создание объекта BeautifulSoup (суп) и передача его конструктору
 		
 		сообщение = суп.find("div", id=номер) # находим код с тегом div и id номера сообщения
-		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare')) # в сообщении находим тег div с классом text, а в нём находим ссылку по ключевому слову
+		ссылка = сообщение.find('div', class_='text').find_all(string=re.compile('zippyshare.com')) # в сообщении находим тег div с классом text, а в нём находим ссылку по ключевому слову
 		for txt in ссылка:
 			i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
 		if not "ссылка" in i: # если ссылка не нашлась, то находим по-другому
-			ссылка = суп.find_all(string=re.compile(['zippyshare', 'cloud.mail']), recursive=True) # находим ссылку во всём супе в обратном порядке #'https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html'
+			ссылка = суп.find_all(string=re.compile('zippyshare.com'), recursive=True) # находим ссылку во всём супе в обратном порядке #'https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html'
 			for txt in ссылка:
-				i.update({'ссылка' : " ".join(txt.split("//")[-1])}) # записываем ссылку
+				i.update({'ссылка' : "".join(txt.split("//")[-1])}) # записываем ссылку
 		i.update({'жанр' : [] }) # записываем список жанров
 		for жанр in суп.find_all("a", class_="ftag"): # находим все жанры
 		    i["жанр"].append(жанр.text) # записываем все жанры в список жанров
@@ -67,5 +67,4 @@ for i in база: # для записи в массиве записей
 		mouse.click('left') # левый клик мыши
 		i.update({'скачен' : 1}) # записать индекс "скачен"
 	with open("музыка.json", "w", encoding='utf-8') as i: i.write(json.dumps(база, ensure_ascii = False)) # записываем базу
-	
 #<div class="body">	<div class="text"> <b><span style='font-size:14pt;line-height:100%'>Jon Gurd</span></b><br><br><a href='https://funkyimg.com/view/36ZUP' target='_blank'><img src='https://funkyimg.com/i/36ZUP.jpeg' alt='картинка, оставленная пользователем'></a><br><br><a href='https://forum.funkysouls.org/go.php?https://jongurd.bandcamp.com/' target='_blank'>bandcamp</a><br><br><b>Jon Gurd – Lion (2020)</b><br><br><a href='https://funkyimg.com/view/36ZUU' target='_blank'><img src='https://funkyimg.com/i/36ZUU.jpg' alt='картинка, оставленная пользователем'></a><br><br>CD1:<br>01 – Love<br>02 – Together<br>03 – Goodbye<br>04 – Lion<br>05 – Star<br>06 – See It<br>07 – District<br>08 – Endless<br>09 – You Are<br>10 – The Dream<br><br>CD2:<br>01 – Together<br>02 – Lion (Edit)<br>03 – The Dream (Edit)<br>04 – District (Edit)<br><br><a href='https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html' target='_blank'>MP3</a>   175MB<br><br><a href='https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/9Y0CAwcu/file.html' target='_blank'>FLAC</a>   440MB  </div>
