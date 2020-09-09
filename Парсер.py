@@ -1,10 +1,10 @@
 from bs4 import BeautifulSoup # импорт класса BeautifulSoup из модуля bs4
-import requests as req
-import json
-import re
-import webbrowser # библиотека работы с ссылками
-import time
-import mouse
+import requests as req # модуль для веб-запросов
+import json # модуль для работы с json
+import re # модуль для работы с текстом
+import webbrowser # модуль для работы с ссылками
+import time # модуль для работы со временем
+import mouse # модуль для имитации мышки
 # ПАРСИНГ ЗАПИСЕЙ
 конец=0 # индикатор окончания просмотра страниц
 итерация =1 # первая страница
