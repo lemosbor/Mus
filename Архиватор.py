@@ -1,5 +1,6 @@
 from pyunpack import Archive # библиотека работы с архивами. Для установки библиотеки необходимо pip install patool, pip install pyunpack (из папки с 7Z) и прописать папку с 7Z в пути Path
 from pathlib import Path # библиотека для работы с папками
+import os
 from pydub import AudioSegment # подключаем библиотеку для работы с mp3
 #from pydub.playback import play # подключаем библиотеку для воспроизведения mp3
 
