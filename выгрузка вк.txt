@@ -1,0 +1,470 @@
+{
+ "count": 21636,
+ "items": [
+  {
+   "id": 92643,
+   "from_id": -80472434,
+   "owner_id": -80472434,
+   "date": 1599815100,
+   "marked_as_ads": 0,
+   "post_type": "post",
+   "text": "Marilyn Manson - We Are Chaos (2020)\nЖанр: Industrial Rock \nСтрана: USA | + 1 трек под обложкой\n\nАмериканский музыкант Мерилин Мэнсон выпустил свой новый студийный альбом. Одиннадцатая по счету полноформатная пластинка получила название \"We Are Chaos\" и появилась 11 сентября 2020 года на лейбле Loma Vista. Альбом был спродюсирован известным кантри-исполнителем Шутером Дженнингсом. \"Этот концептуальный альбом - зеркало, созданное Шутером и мной для слушателя, в которое мы не будем смотреть. Здесь так много комнат, шкафов, сейфов и ящиков. Но в душе или в вашем музее воспоминаний худшее всегда - зеркала. Черепки и щепки призраков преследовали меня, когда я писал большинство этих текстов\", - рассказал об альбоме Мэнсон. \n \nТреклист: \n01. Red Black And Blue \n02. We Are Chaos \n03. Don’t Chase The Dead \n04. Paint You With My Love \n05. Halfway And One Step Forward \n06. Infinite Darkness \n07. Perfume \n08. Keep My Head Together \n09. Solve Coagula \n10. Broken Needle\n\nПлейлист (10 треков): https://vk.cc/azsUaq\n\n#Industrial_Rock@newbum",
+   "is_pinned": 1,
+   "attachments": [
+    {
+     "type": "photo",
+     "photo": {
+      "album_id": -7,
+      "date": 1599803480,
+      "id": 457265130,
+      "owner_id": -80472434,
+      "has_tags": false,
+      "access_key": "73b70eafc50458e00f",
+      "sizes": [
+       {
+        "height": 130,
+        "url": "https://sun9-65.userapi.com/dGasJCu93B5Zq4VLDusI-cGIC62dTR6mUm3z8g/DmlPziBA4WE.jpg",
+        "type": "m",
+        "width": 130
+       },
+       {
+        "height": 130,
+        "url": "https://sun9-65.userapi.com/dGasJCu93B5Zq4VLDusI-cGIC62dTR6mUm3z8g/DmlPziBA4WE.jpg",
+        "type": "o",
+        "width": 130
+       },
+       {
+        "height": 200,
+        "url": "https://sun9-65.userapi.com/2bhYCG7apiuBTcHT68oxCW5tDez7tmKzJXdRFg/-RNayoxFMXE.jpg",
+        "type": "p",
+        "width": 200
+       },
+       {
+        "height": 320,
+        "url": "https://sun9-59.userapi.com/MQT5LVy1bRPGuUVZrjgxMSknW-XpOUWytTAzmg/j8cK4jfD9gw.jpg",
+        "type": "q",
+        "width": 320
+       },
+       {
+        "height": 510,
+        "url": "https://sun9-57.userapi.com/QVFedocgD_mU4A1FMhyA18XlqeXzAjW1CPvLcw/-dE9n7XtGYQ.jpg",
+        "type": "r",
+        "width": 510
+       },
+       {
+        "height": 75,
+        "url": "https://sun9-56.userapi.com/jL_RpKz6W8a3LV0as3ogvazV6wB4HKXmee1vzQ/GoF3sn70zvo.jpg",
+        "type": "s",
+        "width": 75
+       },
+       {
+        "height": 1440,
+        "url": "https://sun9-4.userapi.com/VUaU-g63ihojZBtKGaYzE4rgr34YSLpJ1AOqkA/08sauPvM7Hs.jpg",
+        "type": "w",
+        "width": 1440
+       },
+       {
+        "height": 604,
+        "url": "https://sun9-31.userapi.com/9cQThmrKvGthEVhN3ZIoJ0907CjVjjBqTpU6Lg/3yAWm66rMto.jpg",
+        "type": "x",
+        "width": 604
+       },
+       {
+        "height": 807,
+        "url": "https://sun9-74.userapi.com/BfklM_jwcfoUHiyvRey01K5cykXqLQPcwWN22A/Q--S1MlHWTE.jpg",
+        "type": "y",
+        "width": 807
+       },
+       {
+        "height": 1080,
+        "url": "https://sun9-41.userapi.com/vsFdEhgUezTN8xlc8D4BdcZGOZskJTN-TFRkaQ/rydQTuhoFXo.jpg",
+        "type": "z",
+        "width": 1080
+       }
+      ],
+      "text": "",
+      "user_id": 100
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456244098,
+      "owner_id": 2000200181,
+      "title": "RED BLACK AND BLUE",
+      "duration": 25,
+      "is_explicit": true,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456243186,
+      "owner_id": 2000391414,
+      "title": "WE ARE CHAOS",
+      "duration": 25,
+      "is_explicit": true,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456243380,
+      "owner_id": 2000431598,
+      "title": "DON'T CHASE THE DEAD",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456244188,
+      "owner_id": 2000141715,
+      "title": "PAINT YOU WITH MY LOVE",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456244070,
+      "owner_id": 2000258360,
+      "title": "HALF-WAY & ONE STEP FORWARD",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456243339,
+      "owner_id": 2000387093,
+      "title": "INFINITE DARKNESS",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456243472,
+      "owner_id": 2000053088,
+      "title": "PERFUME",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456243482,
+      "owner_id": 2000303596,
+      "title": "KEEP MY HEAD TOGETHER",
+      "duration": 25,
+      "is_explicit": true,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Marilyn Manson",
+      "id": 456244079,
+      "owner_id": 2000158529,
+      "title": "SOLVE COAGULA",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599803480,
+      "album_id": 2,
+      "no_search": 1,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Marilyn Manson",
+        "domain": "2060036383363996951",
+        "id": "2060036383363996951"
+       }
+      ],
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    }
+   ],
+   "post_source": {
+    "type": "vk"
+   },
+   "comments": {
+    "count": 17,
+    "can_post": 1,
+    "groups_can_post": true
+   },
+   "likes": {
+    "count": 273,
+    "user_likes": 0,
+    "can_like": 1,
+    "can_publish": 1
+   },
+   "reposts": {
+    "count": 94,
+    "wall_count": 0,
+    "mail_count": 0,
+    "user_reposted": 0
+   },
+   "views": {
+    "count": 5446
+   },
+   "is_favorite": false
+  },
+  {
+   "id": 92729,
+   "from_id": -80472434,
+   "owner_id": -80472434,
+   "date": 1599905100,
+   "marked_as_ads": 0,
+   "post_type": "post",
+   "text": "Линда - Недолюбили [Single] (2020) \nЖанр: Alternative Rock\nСтрана: Russia \n \nРоссийская исполнительница Линда представила свой новый трек, который получил название \"Недолюбили\". Композиция войдет в грядущий полноформатный альбом \"ДНК мира\", релиз которого состоится 25 сентября 2020 года. \n \n#Alternative_Rock@newbum",
+   "attachments": [
+    {
+     "type": "photo",
+     "photo": {
+      "album_id": -7,
+      "date": 1599849159,
+      "id": 457265147,
+      "owner_id": -80472434,
+      "has_tags": false,
+      "access_key": "079d7a1a117687f6ce",
+      "sizes": [
+       {
+        "height": 130,
+        "url": "https://sun9-6.userapi.com/NkqSxLp3-pPYSbeET2Ya4vGYqUIIYdJNZ5DEXg/tj7pLnH1vE8.jpg",
+        "type": "m",
+        "width": 130
+       },
+       {
+        "height": 130,
+        "url": "https://sun9-6.userapi.com/NkqSxLp3-pPYSbeET2Ya4vGYqUIIYdJNZ5DEXg/tj7pLnH1vE8.jpg",
+        "type": "o",
+        "width": 130
+       },
+       {
+        "height": 200,
+        "url": "https://sun9-29.userapi.com/OggUaItYlUHqpRiHJV_b0T8UdwKJ4RDMM9wHXQ/y4pYOKqIMmQ.jpg",
+        "type": "p",
+        "width": 200
+       },
+       {
+        "height": 320,
+        "url": "https://sun9-11.userapi.com/ifztrcOL4IJiNKnEBSZ9dQ_UGbO7KsPQ_YXpZA/0cJMHlvDEsE.jpg",
+        "type": "q",
+        "width": 320
+       },
+       {
+        "height": 510,
+        "url": "https://sun9-43.userapi.com/jaHQyYsZt4_c85bgnYg3tHjIK_25r2OLDpKUeg/vf74HEuqXII.jpg",
+        "type": "r",
+        "width": 510
+       },
+       {
+        "height": 75,
+        "url": "https://sun9-34.userapi.com/5r6tyv6Ss0j3cp6O4mROQtbeOgwTK3P9a5eLow/VpqwEPx-yt8.jpg",
+        "type": "s",
+        "width": 75
+       },
+       {
+        "height": 604,
+        "url": "https://sun9-25.userapi.com/CvwTAtjvkILILr7ibJFXxiQDKK0FdaFDl24XlQ/C0ysxkNvcAI.jpg",
+        "type": "x",
+        "width": 604
+       },
+       {
+        "height": 807,
+        "url": "https://sun9-30.userapi.com/mh8QEG0wb0csv2s8VmiJjjbuRHdqGPswxC_OZw/BEULBO8JJEA.jpg",
+        "type": "y",
+        "width": 807
+       },
+       {
+        "height": 1080,
+        "url": "https://sun9-26.userapi.com/TXukuH-uj4lWAT7XuRahshsBMWE7FmLv1gEPNA/1iUvMQkPpxk.jpg",
+        "type": "z",
+        "width": 1080
+       }
+      ],
+      "text": "",
+      "user_id": 100
+     }
+    },
+    {
+     "type": "audio",
+     "audio": {
+      "artist": "Линда",
+      "id": 456243369,
+      "owner_id": 2000363738,
+      "title": "Недолюбили",
+      "duration": 25,
+      "is_explicit": false,
+      "url": "https://vk.com/mp3/audio_api_unavailable.mp3",
+      "date": 1599849159,
+      "album_id": 2,
+      "is_hq": true,
+      "main_artists": [
+       {
+        "name": "Линда",
+        "domain": "6940743975478530",
+        "id": "6940743975478530"
+       }
+      ],
+      "subtitle": "Single Version",
+      "short_videos_allowed": false,
+      "stories_allowed": false
+     }
+    }
+   ],
+   "post_source": {
+    "type": "vk"
+   },
+   "comments": {
+    "count": 0,
+    "can_post": 1,
+    "groups_can_post": true
+   },
+   "likes": {
+    "count": 23,
+    "user_likes": 0,
+    "can_like": 1,
+    "can_publish": 1
+   },
+   "reposts": {
+    "count": 2,
+    "wall_count": 0,
+    "mail_count": 0,
+    "user_reposted": 0
+   },
+   "views": {
+    "count": 713
+   },
+   "is_favorite": false
+  }
+ ]
+}
+[Finished in 1.6s]
