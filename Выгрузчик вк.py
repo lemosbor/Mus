@@ -1,16 +1,12 @@
 import vk_api
-from vk_api.audio import VkAudio
-import re
-import requests
+from vk_api.audio import VkAudio # модуль ВК
+import re # модуль работы с текстом
+import requests # модуль запросов к инету
 
-vk_session = vk_api.VkApi('+79162863084', 'L-02')
-vk_session.auth()
-vkaudio = VkAudio(vk_session, convert_m3u8_links=True)
-albums = vkaudio.get_post_audio(-80472434,92776)
-for album in list(albums):
-        print(album['title'], album['url'].split("?")[0])
-
-url = 'https://cs1-67v4.vkuseraudio.net/p17/d712cbd62f9408.mp3'  
-r = requests.get(url)
-with open('/Users/Илья/Music/Приёмка/'+название+'.mp3', 'wb') as f:  
-    f.write(r.content)
+вксессия = vk_api.VkApi('+79162863084', 'L-02') # задаём параметры авторизации
+вксессия.auth() # авторизируемся
+песни = VkAudio(вксессия, convert_m3u8_links=True).get_post_audio(-80472434,92776) # выгружаем песни из поста
+for песня in list(песни): # для песни из листа песен поста
+        выгрузкапесни = requests.get(песня['url'].split("?")[0]) #получаем адрес для выгрузки песни (обрезаем по знаку «?»), выгружаем
+        with open('/Users/Илья/Music/Приёмка/'+песня['title']+'.mp3', 'wb') as f:   #записываем в файл с названием песни
+                f.write(выгрузкапесни.content)  #содержимое песни
