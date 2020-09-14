@@ -3,7 +3,7 @@ from vk_api.audio import VkAudio
 import re
 import requests
 
-vk_session = vk_api.VkApi('+79162863084', 'Leyta-02')
+vk_session = vk_api.VkApi('+79162863084', 'L-02')
 vk_session.auth()
 vkaudio = VkAudio(vk_session, convert_m3u8_links=True)
 albums = vkaudio.get_post_audio(-80472434,92776)
