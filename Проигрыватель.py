@@ -20,9 +20,9 @@ clock = pygame.time.Clock()
 while 1: # создаем цикл
 	sc.fill(WHITE) # заливаем окошко белым 
 		for n in Path(папка).glob('*.mp3'):
-    #pygame.draw.circle(sc, BLUE, (x, y), r) 
-      #pygame.display.update() #обновить экран ДЛЯ ГРАФИКИ
-      for i in pygame.event.get():
+		#pygame.draw.circle(sc, BLUE, (x, y), r) 
+		#pygame.display.update() #обновить экран ДЛЯ ГРАФИКИ
+		for i in pygame.event.get():
           if i.type == pygame.QUIT: # если нажать ВЫХ
               exit() # то выйти
           elif i.type == pygame.KEYDOWN: #если нажать
