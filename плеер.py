@@ -31,3 +31,4 @@ class App(tk.Tk): #'''Tk window/label adjusts to size of image'''
 app = App(инфо)
 app.перебор()
 app.пуск() # запускаем приложение
+#пав
