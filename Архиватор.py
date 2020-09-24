@@ -2,23 +2,25 @@ from pyunpack import Archive # библиотека работы с архива
 from pathlib import Path # библиотека для работы с папками
 #import os
 from pydub import AudioSegment # подключаем библиотеку для работы с mp3
-#from pydub.playback import play # подключаем библиотеку для воспроизведения mp3
 
 архивы = [] # создаем массив архивов
-for n in Path("/Users/Илья/Downloads").glob('*.rar'): # для файлов с расширением *.rar ПОПРОБОВАТЬ сделать список
+for n in Path("/Users/Илья/Downloads").glob('*.rar'): # для файлов с расширением *.rar
 	архивы.append(str(n)) #добавляем имя пути
-for n in Path("/Users/Илья/Downloads").glob('*.7z'): # для файлов с расширением
+for n in Path("/Users/Илья/Downloads").glob('*.7z'): # »
 	архивы.append(str(n)) #добавляем имя пути
-for n in Path("/Users/Илья/Downloads").glob('*.zip'): # для файлов с расширением 
+for n in Path("/Users/Илья/Downloads").glob('*.zip'): # »
 	архивы.append(str(n)) #добавляем имя пути
-for n in Path("/Users/Илья/Downloads").glob('*.tar'): # для файлов с расширением 
-	архивы.append(str(n)) #добавляем имя пути
-print("Кол-во архивов:", len(архивы))
-for i in архивы: # для каждого архива из массива архивов
-	Archive(i).extractall("/Музыка/Приёмка") # разархивировать в папку «Приёмка»
-	Path(i).unlink() #os.remove(i) # удалить архив
-print("Архивы распакованны в папку Приёмка и удалены")
+for n in Path("/Users/Илья/Downloads").glob('*.tar'): # »
+	архивы.append(str(n)) # добавляем имя пути
+if len(архивы) > 0:
+	print("Кол-во архивов:", len(архивы))
+	for i in архивы: # для каждого архива из массива архивов
+		Archive(i).extractall("/Музыка/Приёмка") # разархивировать в папку «Приёмка»
+		Path(i).unlink() #os.remove(i) # удалить архив
+	print("Архивы распакованны в папку Приёмка и удалены")
+else: print("Новых архивов нет")
 # НАРЕЗЧИК
+print("Приступаем к нарезке демо-треков из папок песен в Приёмке")
 for папка in Path('/Музыка/Приёмка').iterdir(): #для всех подпапок в папке «Приёмка»	
 	if папка.is_dir() == True: # если папка		
 		демо = 0 #создаём демо-трек
