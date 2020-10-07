@@ -20,8 +20,9 @@ while конец == 0: # цикл перебора страниц
 	#про="95.174.67.50" # IP прокси https://free-proxy-list.net/
 	#кси="18080" # порт прокси
 	#прокси = { 'http': "http://"+про+":"+кси, 'https': "http://"+про+":"+кси} # задаем прокси (для заблокированных сайтов)
-	прокси = FreeProxy().get()
-	
+	проксие = FreeProxy(country_id=['US', 'NL'], rand=True).get()
+	прокси = {'http': проксие, 'https': проксие}
+	print(прокси)
 	запрос = requests.get(адрес, proxies=прокси) # делаем запрос к сайту, используя прокси
 	запрос.encoding = 'utf-8' #перекодируем результат запроса
 	суп = BeautifulSoup(запрос.text,  'lxml') # создание объекта BeautifulSoup (суп) и передача его конструктору. Вторая опция уточняет объект парсинга.
@@ -53,16 +54,18 @@ for i in база: # прогоняем по всем записям
 		print(ссылка)
 		for txt in ссылка:
 			i.update({'ссылка' : " ".join(txt.split())}) # записываем ссылку
-		if not "ссылка" in i: # если ссылка не нашлась, то находим по-другому			
-			позиция1=[суп.rfind("zippyshare.com")][0]-7 # позиция последнего словосочетания в супе - 7 знаков
-			подсуп = суп[позиция1:]
-			позиция2=[подсуп.find("html")][0]+4 # позиция первого словосочетания в подсупе + 4 знака			
-			ссылка = подсуп[:позиция2]
-			#ссылка = суп.find_all(string=re.compile('zippyshare.com')) # находим ссылку во всём супе в обратном порядке #'https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html'
-			print(ссылка)
-			#for txt in ссылка:
-			i.update({'ссылка' : ссылка}) # записываем ссылку
-			#print(i['ссылка'])
+		if not "ссылка" in i: # если ссылка не нашлась, то находим по-другому
+			try:			
+				позиция1=[суп.rfind("zippyshare.com")][0]-7 # позиция последнего словосочетания в супе - 7 знаков
+				подсуп = суп[позиция1:]
+				позиция2=[подсуп.find("html")][0]+4 # позиция первого словосочетания в подсупе + 4 знака			
+				ссылка = подсуп[:позиция2]
+				#ссылка = суп.find_all(string=re.compile('zippyshare.com')) # находим ссылку во всём супе в обратном порядке #'https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html'
+				print(ссылка)
+				#for txt in ссылка:
+				i.update({'ссылка' : ссылка}) # записываем ссылку
+				#print(i['ссылка'])
+			except: pass
 		i.update({'жанр' : [] }) # записываем список жанров
 		for жанр in суп.find_all("a", class_="ftag"): # находим все жанры
 		    i["жанр"].append(жанр.text) # записываем все жанры в список жанров
@@ -80,4 +83,3 @@ for i in база: # для записи в массиве записей
 		i.update({'скачен' : 1}) # записать индекс "скачен"
 		print(i['ф'])
 	with open("музыка.json", "w", encoding='utf-8') as i: i.write(json.dumps(база, ensure_ascii = False)) # записываем базу
-#<div class="body">	<div class="text"> <b><span style='font-size:14pt;line-height:100%'>Jon Gurd</span></b><br><br><a href='https://funkyimg.com/view/36ZUP' target='_blank'><img src='https://funkyimg.com/i/36ZUP.jpeg' alt='картинка, оставленная пользователем'></a><br><br><a href='https://forum.funkysouls.org/go.php?https://jongurd.bandcamp.com/' target='_blank'>bandcamp</a><br><br><b>Jon Gurd – Lion (2020)</b><br><br><a href='https://funkyimg.com/view/36ZUU' target='_blank'><img src='https://funkyimg.com/i/36ZUU.jpg' alt='картинка, оставленная пользователем'></a><br><br>CD1:<br>01 – Love<br>02 – Together<br>03 – Goodbye<br>04 – Lion<br>05 – Star<br>06 – See It<br>07 – District<br>08 – Endless<br>09 – You Are<br>10 – The Dream<br><br>CD2:<br>01 – Together<br>02 – Lion (Edit)<br>03 – The Dream (Edit)<br>04 – District (Edit)<br><br><a href='https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/Epi3DSTq/file.html' target='_blank'>MP3</a>   175MB<br><br><a href='https://forum.funkysouls.org/go.php?https://www117.zippyshare.com/v/9Y0CAwcu/file.html' target='_blank'>FLAC</a>   440MB  </div>
