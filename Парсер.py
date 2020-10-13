@@ -6,6 +6,8 @@ import webbrowser # модуль для работы с ссылками
 import time # модуль для работы со временем
 import mouse # модуль для имитации мышки
 from fp.fp import FreeProxy # модуль выгрузки прокси https://pypi.org/project/free-proxy/
+#https://forum.funkysouls.org/go.php?https://yadi.sk/d/0BBnHuzU-yCsqg
+#https://forum.funkysouls.org/go.php?https://cloud.mail.ru/public/LvnS/f2yn55rPf
 # ПАРСИНГ ЗАПИСЕЙ
 конец=0 # индикатор окончания просмотра страниц
 итерация=1 # первая страница
