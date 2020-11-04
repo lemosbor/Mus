@@ -2,6 +2,8 @@ import os
 from io import BytesIO
 from itertools import cycle # модуль циклов
 import tkinter as tk # Python3
+from tkinter import *
+from tkinter import font as tkFont
 import shutil # модуль удаления папки целиком
 from pygame import mixer # модуль воспроизведения музыки
 from pathlib import Path
@@ -25,18 +27,19 @@ else: # если демо-треки есть
 class App(tk.Tk): #'''Tk window/label adjusts to size of image'''
     def __init__(self, инфо): # the root will be self
         tk.Tk.__init__(self)# allows repeat cycling through the pictures # store as (img_object, img_name) tuple
-        self.музыкацикл = ino for ino in песни # cycle(ino for ino in песни)
+        self.музыкацикл = cycle(ino for ino in песни)
+        helv36 = tkFont.Font(family='Helvetica', size=36, weight=tkFont.BOLD)
+        self.Кудалить = tk.Button(self, text = 'удалить', font=helv36) #https://habr.com/ru/post/133337/
+        self.Коставить = tk.Button(self, text = 'оставить', font=helv36)
+        self.Кперемотать = tk.Button(self, text = 'перемотать', font=helv36)
+        self.Кудалить.bind("<Button-1>", self.ккласс0)
+        self.Коставить.bind("<Button-1>", self.ккласс1)
+        self.Кперемотать.bind("<Button-1>", self.перемотка)      
+        self.Кудалить.pack(side = 'left')
+        self.Коставить.pack(side = 'right')
+        self.Кперемотать.pack(side = 'bottom')
     def перебор(self): # собственно перебор фоторафий
-        self.музыка= next(self.музыкацикл) #отображаемая информация        
-        Кудалить = Button(tk, text = 'удалить') #https://habr.com/ru/post/133337/
-        Коставить = Button(tk, text = 'оставить')
-        Кперемотать = Button(tk, text = 'перемотать')
-        Кудалить.bind("<Button-1>", self.ккласс0)
-        Коставить.bind("<Button-1>", self.ккласс1)
-        Кперемотать.bind("<Button-1>", self.перемотка)
-        Кудалить.pack(side = 'left')
-        Коставить.pack(side = 'right')
-        Кперемотать.pack(side = 'bottom')       
+        self.музыка= next(self.музыкацикл) #отображаемая информация
         self.bind('<Left>', self.ккласс0) # если жмём кнопку Влево, то вызываем команду класс0
         self.bind('<Right>', self.ккласс1) # если жмём кнопку Вправо, то вызываем команду класс0
         self.bind('<space>', self.перемотка) # если жмём кнопку Пробел, то вызываем команду перемотка
